@@ -215,15 +215,18 @@ const Cricket: React.FC = () => {
               <div className="grid grid-cols-3 gap-4 mb-6">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-blue-600">{macros.protein}%</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Protein</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400">Protein</div>
+                  <div className="text-xs font-medium text-blue-600">~220g</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-green-600">{macros.carbs}%</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Carbs</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400">Carbs</div>
+                  <div className="text-xs font-medium text-green-600">~270g</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-orange-600">{macros.fats}%</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Fats</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400">Fats</div>
+                  <div className="text-xs font-medium text-orange-600">~75g</div>
                 </div>
               </div>
               
