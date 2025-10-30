@@ -28,10 +28,10 @@ const Cricket: React.FC = () => {
 
   const trainingSchedule = [
     { day: 'Monday', am: 'Cricket', pm: 'Run', amType: 'Cricket', pmType: 'Cardio' },
-    { day: 'Tuesday', am: 'Rest', pm: 'Gym', amType: 'Recovery', pmType: 'Strength' },
+    { day: 'Tuesday', am: 'Rest', pm: 'Rest', amType: 'Recovery', pmType: 'Recovery' },
     { day: 'Wednesday', am: 'Cricket', pm: 'Rest', amType: 'Cricket', pmType: 'Recovery' },
     { day: 'Thursday', am: 'Run', pm: 'Gym', amType: 'Cardio', pmType: 'Strength' },
-    { day: 'Friday', am: 'Cricket', pm: 'Rest', amType: 'Cricket', pmType: 'Recovery' },
+    { day: 'Friday', am: 'Cricket', pm: 'Gym', amType: 'Cricket', pmType: 'Strength' },
     { day: 'Saturday', am: 'Gym', pm: 'Cricket', amType: 'Strength', pmType: 'Cricket' },
     { day: 'Sunday', am: 'Rest', pm: 'Gym', amType: 'Recovery', pmType: 'Strength' }
   ];
