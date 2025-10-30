@@ -27,21 +27,21 @@ const Cricket: React.FC = () => {
   ];
 
   const trainingSchedule = [
-    { day: 'Mon', am: 'Cricket', pm: 'Run', amType: 'Cricket', pmType: 'Cardio' },
-    { day: 'Tues', am: 'Rest', pm: 'Gym', amType: 'Recovery', pmType: 'Strength' },
-    { day: 'Wed', am: 'Cricket', pm: 'Rest', amType: 'Cricket', pmType: 'Recovery' },
-    { day: 'Thurs', am: 'Run', pm: 'Gym', amType: 'Cardio', pmType: 'Strength' },
-    { day: 'Fri', am: 'Cricket', pm: 'Rest', amType: 'Cricket', pmType: 'Recovery' },
-    { day: 'Sat', am: 'Gym', pm: 'Cricket', amType: 'Strength', pmType: 'Cricket' },
-    { day: 'Sun', am: 'Rest', pm: 'Gym', amType: 'Recovery', pmType: 'Strength' }
+    { day: 'Monday', am: 'Cricket', pm: 'Run', amType: 'Cricket', pmType: 'Cardio' },
+    { day: 'Tuesday', am: 'Rest', pm: 'Gym', amType: 'Recovery', pmType: 'Strength' },
+    { day: 'Wednesday', am: 'Cricket', pm: 'Rest', amType: 'Cricket', pmType: 'Recovery' },
+    { day: 'Thursday', am: 'Run', pm: 'Gym', amType: 'Cardio', pmType: 'Strength' },
+    { day: 'Friday', am: 'Cricket', pm: 'Rest', amType: 'Cricket', pmType: 'Recovery' },
+    { day: 'Saturday', am: 'Gym', pm: 'Cricket', amType: 'Strength', pmType: 'Cricket' },
+    { day: 'Sunday', am: 'Rest', pm: 'Gym', amType: 'Recovery', pmType: 'Strength' }
   ];
 
   const achievements = [
     'A Division Cricketer Mumbai',
     'C Division Corporate Cricket Mumbai',
     'Goa Age Group State Camps/Net bowler',
-    'Minor League Cricket USA - Manhattan Yorkers (offers from Metroplex Tracers as well)',
-    'Played with & against top level talent'
+    'Minor League Cricket USA - Manhattan Yorkers (with an offer from Metroplex Tracers)',
+    'Played with and against top level talent'
   ];
 
   const dietPlan = {
