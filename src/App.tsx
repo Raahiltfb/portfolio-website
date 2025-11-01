@@ -17,6 +17,16 @@ function App() {
     const handleScroll = () => {
       const sections = ['home', 'work', 'portfolio', 'about', 'cricket', 'contact'];
       const scrollPosition = window.scrollY + 100;
+      
+      // Handle scroll indicator fade
+      const scrollIndicator = document.getElementById('scroll-indicator');
+      if (scrollIndicator) {
+        if (window.scrollY > window.innerHeight * 0.1) {
+          scrollIndicator.style.opacity = '0.3';
+        } else {
+          scrollIndicator.style.opacity = '0.7';
+        }
+      }
 
       for (const section of sections) {
         const element = document.getElementById(section);

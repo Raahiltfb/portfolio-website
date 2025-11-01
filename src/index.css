@@ -388,3 +388,13 @@ textarea:focus-visible {
 .animate-breathe {
   animation: breathe 4s ease-in-out infinite;
 }
+
+/* Subtle float animation for scroll indicator */
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+}
+
+.animate-subtle-float {
+  animation: subtle-float 1.5s ease-in-out infinite;
+}
