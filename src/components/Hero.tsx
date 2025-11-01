@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Zap } from 'lucide-react';
+import { ArrowDown, Code2 } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
             </h1>
             
             <div className="flex items-center justify-center space-x-2 mb-4 sm:mb-6 animate-slideInRight animation-delay-300 stagger-2">
-              <Zap className="text-cyan-500 animate-glow" size={20} />
+              <Code2 className="text-cyan-500 animate-glow" size={20} />
               <span className="text-base sm:text-lg text-gray-600 dark:text-gray-400 font-medium text-center">
                 Developer • Automation Builder • Athlete
               </span>
@@ -62,11 +62,9 @@ const Hero: React.FC = () => {
         </div>
         
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="flex flex-col items-center space-y-2">
-            <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">Scroll to explore</span>
-            <ArrowDown className="text-gray-400" size={20} />
-          </div>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center space-y-2">
+          <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">Scroll to explore</span>
+          <ArrowDown className="text-gray-400" size={20} />
         </div>
       </div>
     </section>

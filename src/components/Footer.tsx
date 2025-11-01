@@ -16,21 +16,21 @@ const Footer: React.FC = () => {
           {/* Social Links */}
           <div className="flex items-center space-x-4">
             <a
-              href="mailto:raahil.mehta@email.com"
+              href="mailto:raahil.mehta003@gmail.com"
               className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
               aria-label="Email"
             >
               <Mail size={20} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/raahil-mehta-149041307/"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
               aria-label="LinkedIn"
             >
               <Linkedin size={20} />
             </a>
             <a
-              href="#"
+              href="https://github.com/raahiltfb"
               className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
               aria-label="GitHub"
             >

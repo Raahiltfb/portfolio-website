@@ -21,14 +21,29 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-    
-    setTimeout(() => setIsSubmitted(false), 5000);
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      const mailtoLink = `mailto:raahil.mehta003@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Simulate processing time
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+      
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      setIsSubmitting(false);
+      console.error('Error sending email:', error);
+    }
   };
 
   const isFormValid = formData.name.trim() && formData.email.trim() && formData.message.trim();
@@ -37,29 +52,29 @@ const Contact: React.FC = () => {
     {
       icon: <Mail size={20} />,
       label: 'Email',
-      value: 'raahil.mehta@email.com',
-      href: 'mailto:raahil.mehta@email.com',
+      value: 'raahil.mehta003@gmail.com',
+      href: 'mailto:raahil.mehta003@gmail.com',
       color: 'hover:text-cyan-600 dark:hover:text-cyan-400'
     },
     {
       icon: <Linkedin size={20} />,
       label: 'LinkedIn',
       value: 'Connect professionally',
-      href: '#',
+      href: 'https://www.linkedin.com/in/raahil-mehta-149041307/',
       color: 'hover:text-blue-600 dark:hover:text-blue-400'
     },
     {
       icon: <Github size={20} />,
       label: 'GitHub',
       value: 'View my code',
-      href: '#',
+      href: 'https://github.com/raahiltfb',
       color: 'hover:text-gray-800 dark:hover:text-gray-200'
     },
     {
       icon: <MessageCircle size={20} />,
       label: 'WhatsApp',
       value: 'Quick response',
-      href: '#',
+      href: 'https://wa.me/917506373350',
       color: 'hover:text-green-600 dark:hover:text-green-400'
     }
   ];
