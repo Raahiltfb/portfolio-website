@@ -62,12 +62,6 @@ const Hero: React.FC = () => {
         </div>
         
       </div>
-      
-      {/* Scroll indicator - positioned relative to viewport */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center space-y-2 animate-subtle-float opacity-70 transition-opacity duration-300" id="scroll-indicator">
-        <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">Scroll to explore</span>
-        <ArrowDown className="text-gray-400" size={20} />
-      </div>
     </section>
   );
 };
