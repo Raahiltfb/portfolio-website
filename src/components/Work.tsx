@@ -45,6 +45,7 @@ const Work: React.FC = () => {
           <p className="text-lg text-cyan-600 dark:text-cyan-400 font-medium mb-4">
             Software, automation, and operational systems — delivered for real businesses.
           </p>
+          <br><br>
           <h2 className="text-4xl md:text-5xl font-light mb-8">
             <span className="font-semibold">What I Build</span>
           </h2>
