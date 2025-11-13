@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { ExternalLink } from 'lucide-react';
 
 const Portfolio: React.FC = () => {
-  const projects = [
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+
+  const projects = useMemo(() => [
     {
       title: 'Minus CO₂ Automations',
       description: 'Automated site-cleaning alert system for solar portfolios.',
@@ -18,7 +20,7 @@ const Portfolio: React.FC = () => {
       title: 'Jain Associates Law Firm Website',
       description: 'Professional law firm website with SEO optimization and client inquiry conversion.',
       url: 'https://jain-associates-legal-website.vercel.app/',
-      useIframe: false,
+      useIframe: true,
       problem: 'Outdated site, poor SEO, low conversion for enquiries.',
       solution: 'Rebuilt a clean, professional, SEO-optimized website.',
       tools: 'Lovable / modern responsive build',
@@ -28,7 +30,7 @@ const Portfolio: React.FC = () => {
       title: 'Second Nature',
       description: 'Sustainable solutions platform for solar services and client onboarding.',
       url: 'https://secondnaturess.com/',
-      useIframe: false,
+      useIframe: true,
       problem: 'Needed web presence and client-facing materials for solar services.',
       solution: 'Designed and launched a polished site and prototype workflows for client intake.',
       tools: 'Bolt / simple CMS / prototype links',
@@ -38,13 +40,17 @@ const Portfolio: React.FC = () => {
       title: 'Cryptbug (Secret Agency Site)',
       description: 'Specialized intelligence and security operations platform.',
       url: 'https://bird-ops-nexus.vercel.app/',
-      useIframe: false,
+      useIframe: true,
       problem: 'Need for secure, specialized operations coordination platform.',
       solution: 'Built comprehensive platform with real-time coordination and intelligence tools.',
       tools: 'React / TypeScript / modern security practices',
       result: 'Secure, scalable platform for specialized operations'
     }
-  ];
+  ], []);
+
+  const getProxyUrl = (targetUrl: string) => {
+    return `${supabaseUrl}/functions/v1/website-proxy?url=${encodeURIComponent(targetUrl)}`;
+  };
 
   return (
     <section className="py-32 bg-gray-50 dark:bg-gray-900/50">
@@ -65,27 +71,22 @@ const Portfolio: React.FC = () => {
               className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 dark:border-gray-700"
             >
               {/* Preview Section */}
-              <div className="relative overflow-hidden bg-gray-200 dark:bg-gray-700 h-64">
+              <div className="relative overflow-hidden bg-gray-200 dark:bg-gray-700 h-64 group-hover:shadow-inner">
                 {project.useImage ? (
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 flex items-center justify-center">
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white hover:underline flex items-center gap-2 px-4 py-2 bg-black/30 rounded-lg hover:bg-black/50 transition-colors"
-                    >
-                      <ExternalLink size={16} />
-                      Visit Live Site
-                    </a>
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500"></div>
+                ) : project.useIframe ? (
+                  <iframe
+                    src={getProxyUrl(project.url)}
+                    title={project.title}
+                    className="w-full h-full border-none"
+                    loading="lazy"
+                  />
+                ) : null}
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500 pointer-events-none"></div>
               </div>
 
               {/* Content Section */}
