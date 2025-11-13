@@ -1,62 +1,32 @@
 import React from 'react';
-import { ExternalLink, ArrowRight, CheckCircle, Clock, Wrench } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 const Portfolio: React.FC = () => {
   const projects = [
     {
-      title: 'Minus CO₂ — Automation & Operations',
-      category: 'Automation',
-      problem: 'Manual reporting and workflow inefficiencies.',
-      solution: 'Built automation workflows and prototypes to reduce reporting time and streamline data collection.',
-      tools: 'Notion / Google Sheets / Make / custom scripts',
-      result: 'Substantial time savings in manual reporting processes',
-      image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-      status: 'completed',
-      color: 'from-green-500 to-emerald-500'
+      title: 'Minus CO₂ Automations',
+      description: 'Automated site-cleaning alert system for solar portfolios.',
+      image: '/Screenshot 2025-11-13 at 8.15.39 PM.png',
+      url: '#',
+      useImage: true
     },
     {
-      title: 'Jain Associates — Law Firm Website',
-      category: 'Web Development',
-      problem: 'Outdated site, poor SEO, low conversion for enquiries.',
-      solution: 'Rebuilt a clean, professional, SEO-optimized website.',
-      tools: 'Lovable / modern responsive build',
-      result: 'Improved clarity and user experience; site ready for client acquisition',
-      image: 'https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-      status: 'completed',
-      color: 'from-blue-500 to-cyan-500'
+      title: 'Jain Associates Law Firm Website',
+      description: 'Professional law firm website with SEO optimization and client inquiry conversion.',
+      url: 'https://jain-associates-legal-website.vercel.app/',
+      useIframe: true
     },
     {
-      title: 'Second Nature Sustainable Solutions — Website & Prototype',
-      category: 'Web Development',
-      problem: 'Needed web presence and client-facing materials for solar services.',
-      solution: 'Designed and launched a polished site and prototype workflows for client intake.',
-      tools: 'Bolt / simple CMS / prototype links',
-      result: 'Professional web presence established with streamlined client onboarding',
-      image: 'https://images.pexels.com/photos/9875416/pexels-photo-9875416.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-      status: 'completed',
-      color: 'from-green-500 to-blue-500'
+      title: 'Second Nature',
+      description: 'Sustainable solutions platform for solar services and client onboarding.',
+      url: 'https://secondnaturess.com/',
+      useIframe: true
     },
     {
-      title: 'Sample — Demo Project 1',
-      category: 'E-commerce Platform',
-      problem: 'Complex inventory management and poor user experience.',
-      solution: 'Built modern e-commerce platform with automated inventory tracking.',
-      tools: 'React / Node.js / PostgreSQL / Stripe',
-      result: 'Streamlined operations and improved conversion rates',
-      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-      status: 'sample',
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      title: 'Sample — Demo Project 2',
-      category: 'SaaS Dashboard',
-      problem: 'Data scattered across multiple platforms, no unified view.',
-      solution: 'Created comprehensive analytics dashboard with real-time insights.',
-      tools: 'Next.js / TypeScript / D3.js / API integrations',
-      result: 'Centralized data access and improved decision-making speed',
-      image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-      status: 'sample',
-      color: 'from-orange-500 to-red-500'
+      title: 'Cryptbug (Secret Agency Site)',
+      description: 'Specialized intelligence and security operations platform.',
+      url: 'https://bird-ops-nexus.vercel.app/',
+      useIframe: true
     }
   ];
 
@@ -65,86 +35,69 @@ const Portfolio: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-light mb-8">
-            <span className="font-semibold">Selected Projects</span>
+            <span className="font-semibold">Featured Projects</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Real solutions for real businesses — from automation workflows to complete web platforms.
+            Live projects showcasing real business solutions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover-lift border border-gray-100 dark:border-gray-700 relative"
+              className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700 flex flex-col h-full"
             >
-              <div className="absolute inset-0 animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-              {/* Project Image */}
-              <div className="relative overflow-hidden h-64">
-                <img 
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 elastic"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
-                
-                {/* Status badge */}
-                <div className="absolute top-4 left-4 flex items-center space-x-2">
-                  <div className={`px-3 py-1 bg-gradient-to-r ${project.color} text-white text-xs font-semibold rounded-full`}>
-                    {project.category}
-                  </div>
-                  {project.status === 'sample' && (
-                    <div className="px-3 py-1 bg-gray-800/80 text-white text-xs font-medium rounded-full">
-                      Sample Project
-                    </div>
-                  )}
-                </div>
-
-                {/* Status icon */}
-                <div className="absolute top-4 right-4">
-                  {project.status === 'completed' ? (
-                    <div className="p-2 bg-green-500 rounded-full">
-                      <CheckCircle size={16} className="text-white" />
-                    </div>
-                  ) : (
-                    <div className="p-2 bg-gray-600 rounded-full">
-                      <Wrench size={16} className="text-white" />
-                    </div>
-                  )}
-                </div>
+              {/* Preview Section */}
+              <div className="relative overflow-hidden bg-gray-200 dark:bg-gray-700 h-64 flex-shrink-0">
+                {project.useImage ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : project.useIframe ? (
+                  <iframe
+                    src={project.url}
+                    title={project.title}
+                    className="w-full h-full border-none pointer-events-none group-hover:scale-105 transition-transform duration-500 origin-top"
+                    style={{ transformOrigin: 'top center' }}
+                  />
+                ) : null}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
               </div>
 
-              <div className="p-8">
-                <h3 className="text-xl font-semibold mb-4 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
+              {/* Content Section */}
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-2xl font-semibold mb-3 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
                   {project.title}
                 </h3>
-                
-                <div className="space-y-4 mb-6">
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">Problem</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{project.problem}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">Solution</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{project.solution}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">Tools</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{project.tools}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">Result</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{project.result}</p>
-                  </div>
-                </div>
-                
-                <button className="group/btn flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium text-sm transition-all duration-200 w-full justify-center py-3 rounded-lg hover:bg-cyan-50 dark:hover:bg-cyan-900/20">
-                  <span>{project.status === 'sample' ? 'View Demo' : 'View Project'}</span>
-                  <ArrowRight size={16} className="ml-2 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                </button>
+
+                <p className="text-gray-600 dark:text-gray-400 mb-8 flex-grow leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* View Project Button */}
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                    project.url === '#'
+                      ? 'bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-default'
+                      : 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white hover:shadow-lg'
+                  }`}
+                  onClick={(e) => {
+                    if (project.url === '#') {
+                      e.preventDefault();
+                    }
+                  }}
+                >
+                  <span>{project.url === '#' ? 'No Live Link' : 'View Project'}</span>
+                  {project.url !== '#' && (
+                    <ExternalLink size={16} className="ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                  )}
+                </a>
               </div>
             </div>
           ))}
@@ -155,9 +108,9 @@ const Portfolio: React.FC = () => {
           <div className="inline-flex flex-col items-center p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
             <h3 className="text-xl font-semibold mb-2">Ready to Build Something Great?</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md">
-              These projects represent systematic approaches to real business challenges. Let's discuss your vision.
+              Let's discuss your project and how we can deliver real results.
             </p>
-            <button 
+            <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
             >
