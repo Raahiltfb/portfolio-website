@@ -5,7 +5,7 @@ const Cricket: React.FC = () => {
   const progressMetrics = [
     {
       title: '5K Running Time',
-      current: '23:08',
+      current: '23:05',
       target: 'Sub-20:00',
       progress: 75,
       unit: 'minutes'
@@ -27,13 +27,13 @@ const Cricket: React.FC = () => {
   ];
 
   const trainingSchedule = [
-    { day: 'Monday', am: 'Cricket', pm: 'Run', amType: 'Cricket', pmType: 'Cardio' },
-    { day: 'Tuesday', am: 'Rest', pm: 'Rest', amType: 'Recovery', pmType: 'Recovery' },
-    { day: 'Wednesday', am: 'Cricket', pm: 'Rest', amType: 'Cricket', pmType: 'Recovery' },
-    { day: 'Thursday', am: 'Run', pm: 'Gym', amType: 'Cardio', pmType: 'Strength' },
-    { day: 'Friday', am: 'Cricket', pm: 'Gym', amType: 'Cricket', pmType: 'Strength' },
-    { day: 'Saturday', am: 'Gym', pm: 'Cricket', amType: 'Strength', pmType: 'Cricket' },
-    { day: 'Sunday', am: 'Rest', pm: 'Gym', amType: 'Recovery', pmType: 'Strength' }
+    { day: 'Monday', am: 'Easy Run', pm: 'Rest', amType: 'Cardio', pmType: 'Recovery' },
+    { day: 'Tuesday', am: 'Recovery Run', pm: 'Gym - Legs', amType: 'Cardio', pmType: 'Strength' },
+    { day: 'Wednesday', am: 'Gym - Push', pm: 'Hard Run', amType: 'Strength', pmType: 'Cardio' },
+    { day: 'Thursday', am: 'Recovery Run', pm: 'Gym - Pull', amType: 'Cardio', pmType: 'Strength' },
+    { day: 'Friday', am: 'Easy Run', pm: 'Gym - Legs', amType: 'Cardio', pmType: 'Strength' },
+    { day: 'Saturday', am: 'Recovery Run', pm: 'Gym - Push', amType: 'Cardio', pmType: 'Strength' },
+    { day: 'Sunday', am: 'Hard Run', pm: 'Gym - Pull', amType: 'Cardio', pmType: 'Strength' }
   ];
 
   const achievements = [
@@ -216,17 +216,17 @@ const Cricket: React.FC = () => {
                 <div className="text-center">
                   <div className="text-2xl font-bold text-blue-600">{macros.protein}%</div>
                   <div className="text-xs text-gray-600 dark:text-gray-400">Protein</div>
-                  <div className="text-xs font-medium text-blue-600">~220g</div>
+                  <div className="text-xs font-medium text-blue-600">~165g</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-green-600">{macros.carbs}%</div>
                   <div className="text-xs text-gray-600 dark:text-gray-400">Carbs</div>
-                  <div className="text-xs font-medium text-green-600">~270g</div>
+                  <div className="text-xs font-medium text-green-600">~210g</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-orange-600">{macros.fats}%</div>
                   <div className="text-xs text-gray-600 dark:text-gray-400">Fats</div>
-                  <div className="text-xs font-medium text-orange-600">~75g</div>
+                  <div className="text-xs font-medium text-orange-600">~85g</div>
                 </div>
               </div>
               
